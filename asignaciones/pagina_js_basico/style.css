@@ -2,59 +2,75 @@
     margin: 0px;
     padding: 0px;
    }
-   #wrapper{
-    width: 1000px;
-    background-color: midnightblue;
-    margin: 0px auto;
-    padding: 15px;
-   }
-   #header{
-    min-height: 100px;
-    width: 970px;
-    background-color: red;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    padding: 15px;
-    color:white;   
-   }
-   #navigation{
-    min-height: 300px;
-    width: 150px;
-    background-color: mediumaquamarine;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 15px;
-    border-radius: 20px;
-    padding: 30px;
-    color: aqua;
-   }
-   #main_content{
-    min-height: 400px;
-    width: 700px;
-    background-color: black;
-    display: inline-block;
-    color:white;
-    padding: 20px 10px 10px 30px;
-    border-radius: 20px;
-   }
-   #footer{
-       min-height: 80px;
-       width: 970px;
-       background-color: gray;
-       margin-top: 15px;
-       border-radius: 20px;
-       padding: 15px;
-       color: gainsboro;
-   }
-   .ul{
-       margin-bottom: 50px;
-   }
-   .li{
-       padding: 30px;
-   }
-   a:link{
-       color: aquamarine;
-   }
-   .p{
-       text-align: justify;
-   }
+  .container{
+      width: 970px;
+      background-color: #1B345D;
+      margin: 0px auto;
+      padding: 15px;
+  }
+  .header{
+      width: 950px;
+      height: 70px;
+      background-color: red;
+      border-radius: 15px;
+      padding: 10px;
+      margin-bottom: 10px;
+  }
+  .header h1{
+      margin-top: 20px;
+      margin-left: 15px;
+      color: #C3CDE3;
+  }
+  .navegation{
+      width: 165px;
+      background-color:#2A7D8C;
+      border-radius: 15px;
+      display: inline-block;
+      vertical-align: top;
+      padding: 15px;
+      font-size: 16px;
+      color: #37909C;
+  }
+  a{
+    color: #37909C;
+  }
+  .navegation ul{
+      margin-left: 20px;
+
+  }
+  .content{
+      width:725px;
+      background-color: black;
+      display: inline-block;
+      border-radius: 15px;
+      margin-left: 10px;
+      color: #C3CDE3;
+      padding: 30px 20px 20px 15px;
+  }
+  .content p{
+      text-align: justify;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+  }
+
+  .content ul{
+      margin-left: 15px;
+  }
+
+  .content ul li p{
+      text-align: justify;
+  }
+
+span{
+    color:#4B56E1;
+}
+.footer{
+    width: 950px;
+    height: 35px;
+    background-color: #5D6673;
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 10px;
+    color: #687382;
+}
