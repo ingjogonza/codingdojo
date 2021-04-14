@@ -1,0 +1,51 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 1px dotted red;
+}
+.container{
+    width: 970px;
+    height: 800px;
+    background-color: #6C5A63;
+    margin: 0px auto;
+}
+.header{
+    width: 970px;
+    background-color: #F5F5F5;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.nameof {
+    width: 250px;
+    margin-left: 10px;
+    display: inline-block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.jingle{
+    width: 550px;
+    margin-right: 10px;
+    display: inline-block;
+    padding-left: 120px;
+}
+.top{
+    width: 970px;
+    min-height: 400px;
+}
+.imgjayne{
+    width:400px;
+    height: 300px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+.about{
+    width:500px;
+    height: 300px;
+    display:inline-block;
+}
+img{
+    width: 380px;
+    height: 260px;
+    border: #F5F5F5 5px solid;
+}
