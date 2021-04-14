@@ -1,11 +1,10 @@
 * {
     margin: 0px;
     padding: 0px;
-    outline: 1px dotted red;
+    /*outline: 1px dotted red;*/
 }
 .container{
     width: 970px;
-    height: 800px;
     background-color: #6C5A63;
     margin: 0px auto;
 }
@@ -14,6 +13,11 @@
     background-color: #F5F5F5;
     padding-top: 20px;
     padding-bottom: 5px;
+}
+.header h2{
+    color:black;
+    padding: 10px;
+    
 }
 .nameof {
     width: 250px;
@@ -29,11 +33,11 @@
 }
 .top{
     width: 970px;
-    min-height: 400px;
+    margin-bottom: 10px;
 }
 .imgjayne{
     width:400px;
-    height: 300px;
+    height: 280px;
     margin-right: 10px;
     display: inline-block;
     vertical-align: top;
@@ -41,11 +45,62 @@
 }
 .about{
     width:500px;
-    height: 300px;
+    height: 280px;
     display:inline-block;
+    background-color: #EEE7EE;
 }
-img{
+.imgjayne img{
     width: 380px;
     height: 260px;
     border: #F5F5F5 5px solid;
+}
+.about p{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.botton{
+    width: 970px;
+    height: 400px;
+}
+.top+botton h2{
+    background-color: #8D8B98;
+    color:white;
+    padding: 10px;
+}
+.botton p{
+    text-align: justify;
+    font-size: 12px;
+    font-weight: 100;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.lamode{
+    width: 280px;
+    display: inline-block;
+    margin: 0px 15px 10px 20px;
+    background-color: #E6DCE6;
+    
+}
+
+.familycontact{
+    width: 280px;
+    height: 250px;
+    display: inline-block;
+    margin: 0px 15px 10px 0px;
+    vertical-align: top;
+    background-color: #E6DCE6;
+}
+.fiveeleven{
+    width: 280px;
+    height: 250px;
+    display: inline-block;
+    margin: 0px 15px 10px 15px;
+    vertical-align: top;
+    background-color: #E6DCE6;
+}
+
+.lamode img{
+    width: 280px;
+    height: 150px;
 }
