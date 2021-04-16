@@ -3,6 +3,12 @@
     padding: 0px;
     /*outline: 1px dotted red;*/
 }
+a{
+    color: black;
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .container{
     width: 970px;
     background-color: #6C5A63;
@@ -44,10 +50,12 @@
     padding: 10px;
 }
 .about{
-    width:500px;
+    width:490px;
     height: 280px;
     display:inline-block;
     background-color: #EEE7EE;
+    padding: 10px;
+    vertical-align: top;
 }
 .imgjayne img{
     width: 380px;
@@ -59,48 +67,102 @@
     margin-bottom: 10px;
 }
 
-.botton{
-    width: 970px;
-    height: 400px;
-}
-.top+botton h2{
+
+.subtitulo{
     background-color: #8D8B98;
     color:white;
     padding: 10px;
 }
 .botton p{
     text-align: justify;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 100;
     padding-right: 5px;
     padding-left: 5px;
 }
-.lamode{
-    width: 280px;
-    display: inline-block;
-    margin: 0px 15px 10px 20px;
+.botton div{
     background-color: #E6DCE6;
-    
-}
+    width: 290px;
+    height: 360px;
 
-.familycontact{
-    width: 280px;
-    height: 250px;
+}
+.lamode{
     display: inline-block;
-    margin: 0px 15px 10px 0px;
+    margin: 0px 15px 0px 20px;    
+}
+.familycontact{
+    display: inline-block;
+    margin: 0px 15px 0px 0px;
     vertical-align: top;
-    background-color: #E6DCE6;
 }
 .fiveeleven{
-    width: 280px;
-    height: 250px;
     display: inline-block;
-    margin: 0px 15px 10px 15px;
+    margin: 0px 15px 0px 15px;
     vertical-align: top;
-    background-color: #E6DCE6;
 }
 
-.lamode img{
-    width: 280px;
+.botton img{
+    width: 290px;
     height: 150px;
 }
+
+ul li{
+    display: inline-block;
+    padding-left:2px ;
+    margin-top: 5px;
+}
+ul li img{
+    width: 50px;
+    height: 45px;
+}
+
+.footer{
+    width: 970px;
+    height: 80px;
+    background-color: #F5F5F5;
+    padding: 10px 0px 10px 0px;
+}
+.technologies div{
+    width: 290px;
+    background-color: #E6DCE6;
+}
+.technologies h3{
+    background-color: #8D8B98;
+    color:white;
+    padding: 5px;
+}
+
+.footer p{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer img{
+    width: 27px;
+    height: 22px;
+}
+.buttons{
+    margin-bottom: 30px;
+}
+
+.buttons div{
+    width: 290px;
+    background-color:#E6DCE6;
+}
+button{
+    background-color: green;
+    border-radius: 5px;
+    height: 45px;
+    color: white;
+}
+
+#empty{
+    width: 90px;
+    display: inline-block;
+}
+#buttonholder{
+    width: 125px;
+    display: inline-block;
+}
+
+
