@@ -1,0 +1,203 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dotted red;  */
+}
+
+.container{
+    width: 970px;
+    margin: 0px auto;
+    font-family: sans-serif;
+}
+header{
+    width: 970px;
+    padding-left: 20px;
+}
+.header p{
+    font-size: 48px;
+}
+.header img{
+    width: 100x;
+    height: 75px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.spanazul{
+    color: #25679F;
+}
+.spanrojo{
+    color: red;
+}
+.maintitle{
+    background-color: #5082AC;
+    font-size: 18px;
+    color: white;
+    padding-left: 20px;
+}
+.left-content{
+    width: 175px;
+    display: inline-block;
+}
+.whatsinternet{
+    background-color: #EDEDED;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: left;
+    
+}
+.whatsinternetbtn{
+    border-bottom: 1px solid #C0C0C0;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+}
+.button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+#watchvideo{
+    background-color: #578EBC;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 160px;
+}
+#moreresources{
+    background-color: #ECA343;
+    display: inline-block;
+    padding: 5px;
+    width: 160px;
+}
+.ad{
+    background-image: url("assets/images/ad_background.png");
+    height: 200px;
+    padding: 20px;
+}
+.ad p{
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.ad img{
+    width: 71px;
+    height: 96px;
+    margin: 10px 0px 10px 20px;
+}
+.ad a{
+    width: 180px;
+    background-color: #34C8DF;
+    padding: 2px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.main-content{
+    width: 780px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left:10px
+    
+}
+.navbar{
+    background-color: #EDEDED;
+    border-bottom: 1px solid #C0C0C0;
+}
+.navcontent{
+    display: inline-block;
+}
+.info{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 500px;
+}
+.info p{
+    display: inline-block;
+    vertical-align: top;
+}
+.navcontent img{
+    width: 23px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+.info img{
+    width: 43px;
+    height: 38px;
+    display: inline-block;
+    vertical-align: top;
+}
+.horario{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 10px;
+}
+.phonetext{
+    color: #41CCE1;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: top;
+} 
+.phonecall{
+    display: inline-block;
+}
+.phonecall ul li{
+    list-style: none;
+}
+.subtitulo{
+    color: #5C8CB6;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.main-info p{
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.main-info ul li{
+    list-style: circle black;
+    margin-left: 60px;
+    padding: 10px;
+}
+
+.main-info img{
+    width: 180px;
+    height: 76px;
+    margin-left: 35%;
+}
+.main-info ol li{
+    margin-left: 60px;
+    padding: 10px;
+}
+
+.bigthree{
+    margin-top: 10px;
+    border: 3px solid blue;
+    margin-bottom: 15px;
+}
+
+.bigthree img{
+    width: 100px;
+    height: 80px;
+    display: inline-block;
+    margin-left: 20px;
+}
+.bigthreetext{
+    margin-left:35px;
+    font-size: 8px;
+    display: inline-block;
+    vertical-align: top;
+    width: 550px;
+}
+.bigthreecontent p{
+    display: inline-block;
+}
+
+
