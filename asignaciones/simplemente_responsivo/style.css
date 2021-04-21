@@ -1,0 +1,61 @@
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: 1px dotted red;
+}
+/* 
+.col{
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    width: auto;
+} */
+
+.row{
+    padding: 10px;
+    border:1px solid gray;
+    margin: 5px;
+}
+.top{
+    background-color: #B3B3B3;
+}
+.middle{
+    background-color: #CCCCCC ;
+}
+.botton{
+    background-color:#FFFF9A ;
+}
+@media only screen and (max-width:480px) {
+    .sm-4{
+        width: 100%;
+    }
+    .botton p::before{content: "Phone: Width ";}
+    .botton p::after{
+        content: "less than or equal to 480px";
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width:481px){
+    .med-2{
+        width: 50%;
+    }
+    .botton p::before{content: "Tablet: Width ";}
+    .botton p::after{
+        content: "between 481px and 1023px";
+        font-weight: bold;
+    }
+}
+@media only screen and (min-width:1024px){
+    .lg-1{
+        width: 25%;
+        text-align: justify;
+    }
+    .botton p::before{content: "Desktop: Width ";}
+    .botton p::after{
+        content: "greater than or equal 1024px";
+        font-weight: bold;
+    }
+}
