@@ -67,7 +67,6 @@ console.log(replaceNegative([1,2,-3,-5,5]))
 */
 
 function removerRango(arr,inicio,fin){
-    var remover=[]
     var nuevo=[]
     for(var i=0; i<inicio;i++){
         nuevo.push(arr[i]);
@@ -77,6 +76,16 @@ function removerRango(arr,inicio,fin){
     }
     return nuevo;
 }
+
+// function removerRango(arr,inicio,fin){
+//     var nuevo=[];
+//     for (var i=0;i<arr.length;i++){
+//         if (i<inicio || i>fin){
+//             nuevo.push(arr[i]);
+//         }
+//     }
+//     return nuevo;
+// }
 //console.log(removerRango([20,30,40,50,60,70],2,4))
 /*output
 [ 20, 30, 70 ]
