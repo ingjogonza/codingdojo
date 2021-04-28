@@ -47,9 +47,9 @@ console.log(returnReverso([1,2,3]))
 
 function repetirValores(arr){
     var newarr=[];
-    for (var key in arr){
-        newarr.push(arr[key]);
-        newarr.push(arr[key]);
+    for (var i=0;i<arr.length;i++){
+        newarr.push(arr[i]);
+        newarr.push(arr[i]);
     }
     return newarr;
 }
