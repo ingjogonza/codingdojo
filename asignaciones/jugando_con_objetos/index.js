@@ -6,6 +6,10 @@ var users = [{name: "Michael", age:37}, {name: "John", age:30}, {name: "David", 
 //console.log(users[0].name);
 //¿Cómo harías print/log del nombre y la edad de cada usuario utilizando un for loop? Tu output debería verse algo como esto
 //users.forEach(user=>console.log(`Nombre ${user.name} Edad ${user.age}`))
+// for(var i=0; i<users.length; i++)
+// {
+//     console.log(`Nombre ${users[i].name} Edad ${users[i].age}`);
+// }
 
 //¿Cómo harías para imprimir el nombre de los mayores de edad?
 users.forEach(
