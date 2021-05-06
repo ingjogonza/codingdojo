@@ -102,15 +102,17 @@ function parimpar(arr){
         if(arr[i]%2===0){
             seguidilla_par++;
             seguidilla_impar=0;
-            if(seguidilla_par%3===0){
+            if(seguidilla_par===3){
                 console.log("¡Es para Bien!");
+                seguidilla_par=0;
             }
         }
         if(arr[i]%2!==0){
             seguidilla_impar++;
             seguidilla_par=0;
-            if(seguidilla_impar%3===0){
+            if(seguidilla_impar===3){
                 console.log("¡Qué imparcial!");
+                seguidilla_impar=0
             }
         }
         
@@ -275,9 +277,8 @@ function cambiaHaciaElCentro(arr){
     }
     console.log(arr);
     // return "";
-   
 }
-//cambiaHaciaElCentro([true, 42, "Ada", 2, "pizza"]) /**output [ 'pizza', 42, 'Ada', 2, true ] */
+cambiaHaciaElCentro([true, 42, "Ada", 2, "pizza"]) /**output [ 'pizza', 42, 'Ada', 2, true ] */
 cambiaHaciaElCentro([1,2,3,4,5,6]) /**output [ 6, 2, 4, 3, 5, 1 ] */
 
 /**
@@ -293,5 +294,3 @@ function escalaArray(arr, escala){
 }
 
 console.log(escalaArray([1,2,3], 3)) /**output [ 3, 6, 9 ] */
-
-
