@@ -184,39 +184,90 @@ class Bank {
     constructor(id,name) {
         this.name=name;
         this.id=id;
-
+        this.clientes=[];
     }
-
-    getBankId(){
-
-    }
-
-    const listClientsIdsSortByTaxNumber=()=>clients.sort(taxNumber)
 }
 
+class Client{
+    constructor(id,taxNumber,name){
+        this.id= id;
+        this.taxNumber=taxNumber;
+        this.name=name;
+        this.balance = 0; //balance de todos los saldos de las diferentes cuentas que tiene el cliente en diferentes bancos
+        this.accounts=[];
+    }
+
+}
+
+class Account{
+    constructor(clientId, bankId,balance){
+        this.clientId= clientId;
+        this.bankId= bankId;
+        this.balance= balance;
+    }
+}
+
+/**
+ * 
+ * var task_names = tasks.map(function (task, index, array) {
+ 
+    return task.name; 
+ 
+});
+ */
+
+//constantes para crear las instancias de todas las clases
+const createClients = () => clients.map(client => new Client(client.id, client.taxNumber,client.name));
+const createBanks = () => banks.map(bank => new Bank(bank.id, bank.name));
+const createAccounts = () => accounts.map(account => new Account(account.clientId,account.bankId, account.balance));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//console.log(createAccounts());
+// const createClients = () => {
+//     let clientList = clients.map(client => new Client(client.id,client.taxNumber,client.name));
+//     return clientList;
+// }
+
+// createClients().map(client => {console.log(client.taxNumber)
+// console.log(client.id)});
+
+//console.log(createClients());
+
+
+const listClientsIds = () => clients.map(client => client.id);
+
+const listClientsIdsSortByTaxNumber = () => clients.sort((clientA, clientB) => clientB.taxNumber-clientA.taxNumber).map(client => client.id);
+
+const listAccountByClient = () => clients.map(client => {
+    let accountsByClient=accounts.filter(account => account.clientId==client.id);
+    return accountsByClient;
+})
+
+const cuentasFiltradas = accounts.filter((account) => account.clientId ==6);
 
 
 
 
+console.log(listAccountByClient());
 
 
 
 // Impresión de soluciones. No modificar.
-console.log('Pregunta 0');
-console.log(listClientsIds());
-console.log('Pregunta 1');
-console.log(listClientsIdsSortByTaxNumber());
-console.log('Pregunta 2');
-console.log(sortClientsTotalBalances());
-console.log('Pregunta 3');
-console.log(banksClientsTaxNumbers());
-console.log('Pregunta 4');
-console.log(richClientsBalances());
-console.log('Pregunta 5');
-console.log(banksRankingByTotalBalance());
-console.log('Pregunta 6');
-console.log(banksFidelity());
-console.log('Pregunta 7');
-console.log(banksPoorClients());
-console.log('Pregunta 8');
-console.log(newClientRanking());
+// console.log('Pregunta 0');
+// console.log(listClientsIds());
+ //console.log('Pregunta 1');
+ //console.log(listClientsIdsSortByTaxNumber());
+//console.log('Pregunta 2');
+//console.log(sortClientsTotalBalances());
+// console.log('Pregunta 3');
+// console.log(banksClientsTaxNumbers());
+// console.log('Pregunta 4');
+// console.log(richClientsBalances());
+// console.log('Pregunta 5');
+// console.log(banksRankingByTotalBalance());
+// console.log('Pregunta 6');
+// console.log(banksFidelity());
+// console.log('Pregunta 7');
+// console.log(banksPoorClients());
+// console.log('Pregunta 8');
+// console.log(newClientRanking());
