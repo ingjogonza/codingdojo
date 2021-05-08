@@ -1,0 +1,165 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: nyt-franklin, helvetica, arial, sans-serif;
+    /* outline: 1px solid red; */
+
+}
+
+.wrapper{
+    width: 950px;
+    height: 800px;
+    padding: 20px;
+    margin: 0px auto;
+}
+
+.header{
+    width: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.header img{
+    width: 20px;
+    height: 20px;
+    background-color: #F7F7F7;
+}
+.header input[type=search]{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+}
+
+.header input[type=submit]{
+    background-color: #ABBDCA;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+#searchbtn{
+    width: 30px;
+    height: 20px;
+    margin-right: 100px;
+}
+#loginbtn{
+    width: 50px;
+    height: 20px;
+    margin-left: 210px;
+}
+.header a{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    margin-right: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+.date{
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 150px;
+}
+.logo{
+    width: 400px;
+    height: 46px;
+    margin-right: 50px;
+}
+
+.followus{
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+}
+.title{
+    border-bottom: 1px solid black;
+}
+.title a{
+    color: black;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.headnews{
+    padding-top: 10px;
+    border-bottom: 1px solid black;
+}
+.hn-1{
+    width: 270px;
+    border-right: 1px solid silver;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.hn-2{
+    width: 400px;
+    border-right: 1px solid silver;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.hn-3{
+    width: 100px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.headnews img{
+    width: 49px;
+    height: 49px;
+    display: inline-block;
+    vertical-align: top;
+}
+.headnew-content{
+    border-right: 1px solid silver;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 10px;
+}
+
+.headnew-content a{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.headnew-content a p{
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    text-align: justify;
+    font-size: 12px;
+}
+.subscribe{
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 10px;
+    width: 250px;
+    border-right: 1px solid silver;
+}
+
+.headnews-subtitulo{
+    font-weight: bold;
+    color:black;
+    display: inline-block;
+    vertical-align: top;
+}
+.hn-texto{
+    color:silver;
+    display: inline-block;
+    vertical-align: top;
+}
+.subscribe-content{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-right: 10px;
+    text-align: justify;
+    font-size: 12px;
+}
+
+#subscribirse{
+    width: 78px;
+    height: 20px;
+    margin-left: 15px;
+}
+

@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: nyt-franklin, helvetica, arial, sans-serif;
+}
+.container{
+    width: 1024px;
+    padding: 10px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.top img{
+    width: 25;
+    height: 25px;
+    background-color: #F7F7F7;
+}
+.search{
+    display: flex;
+    /* justify-content: space-around; */
+    justify-content: flex-start;
+
+}
+.search input{
+    margin-left: 10px;
+    text-align: center;
+    color: silver
+    
+}
+.search button{
+    margin-left: 10px;
+    background-color: #ABBDCA;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #ABBDCA;
+}
+#login{
+    background-color: blue;
+    color: white;
+}
+.links{
+    display: flex;
+    justify-content: center;
+}
+.links ul li{
+    display: inline;
+}
+.links ul li a{
+    text-decoration: none;
+    color: black;
+}
+.links img{
+    width: 345px;
+    height: 45px;
+} 
+.header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+}
