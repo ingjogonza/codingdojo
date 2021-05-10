@@ -36,7 +36,7 @@ const listMoreThanOneType = pokémon.filter((item) => item.types.length>1)
 const listPokemonNames = pokémon.map(item =>item.name);
 const listPokemonNamesIdPlus99 = pokémon.filter((item) => item.id > 99).map(item => item.name);
 const listPokemonNamesPoisonOnly = pokémon.filter((item) => item.types.length === 1 && item.types.includes("poison")).map(item => item.name)
-const listPokemonNamesSecondTypeFlying = pokémon.filter((item) => item.types.length > 1 && item.types[1] == "flying").map(item => item.name)
+const listPokemonNamesSecondTypeFlying = pokémon.filter((item) => item.types.length > 1 && item.types[1] == "flying").map(item => item.types[0])
 const countPokemonNormal = pokémon.filter((item) => item.types.includes("normal")).length
 
 //respuestas
