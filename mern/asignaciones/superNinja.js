@@ -32,6 +32,8 @@ class Sensei extends Ninja{
 }
 
 const superSensei = new Sensei("Master Splinter");
+const ninja1 = new Ninja("Hirotaro");
+ninja1.showStats()
 superSensei.speakWisdom();
 
 /**
