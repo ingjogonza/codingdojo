@@ -194,9 +194,21 @@ class Client{
         this.taxNumber=taxNumber;
         this.name=name;
         this.balance = 0; //balance de todos los saldos de las diferentes cuentas que tiene el cliente en diferentes bancos
-        this.accounts=[];
+        this.accounts=[]; //cuentas asociadas a cada cliente
+    }
+}
+
+class ListClients{
+    constructor(arrClients){
+        this.arrClients = arrClients;
     }
 
+    listClientsIds(){
+       return this.arrClients.map(client => {
+           client.id
+           client.name
+        });
+    }
 }
 
 class Account{
@@ -204,6 +216,58 @@ class Account{
         this.clientId= clientId;
         this.bankId= bankId;
         this.balance= balance;
+    }
+}
+
+class ListAccounts{
+    constructor(arrClients, arrAccounts){
+        this.arrClients = arrClients;
+        this.arrAccounts = arrAccounts;
+    }
+
+    getListAccountByClient(){
+        
+        return this.arrClients.map(client => this.arrAccounts.filter(account => account.clientId===client.id))
+    }
+
+    sortClientsBankBalance(){
+        let result=[];
+        this.arrAccounts.reduce((acumulador, currentValue)=>{
+            if(!acumulador[currentValue.clientId]){
+                acumulador[currentValue.clientId]={
+                    clientId: currentValue.clientId,
+                    balance: 0
+                }
+                result.push(acumulador[currentValue.clientId]);
+            }
+            acumulador[currentValue.clientId].balance +=currentValue.balance;
+            return acumulador
+        },{})
+        let sortedClients = result.sort((itemA,ItemB) => ItemB.balance-itemA.balance).map((item) =>{
+            const clientFinded = this.arrClients.find(({clientId}) => clientId = item.clientId);
+            return clientFinded.name;
+
+        } ) 
+    console.log(result);
+    }
+
+    getListRichersSantander(){
+        const listFiltetered = this.arrAccounts.filter((account) => account.bankId===1)
+        let result =[];
+        listFiltetered.reduce((acumulador,currentValue)=>{
+            if(!acumulador[currentValue.clientId]){
+                acumulador[currentValue.clientId]={
+                    clientId: currentValue.clientId,
+                    balance: 0
+                }
+                result.push(acumulador[currentValue.clientId])
+            }
+            acumulador[currentValue.clientId].balance+=currentValue.balance;
+            return acumulador
+        },{})
+        
+        console.log(result.sort((itemA,ItemB) => ItemB.balance-itemA.balance));
+    
     }
 }
 
@@ -233,6 +297,13 @@ const createAccounts = () => accounts.map(account => new Account(account.clientI
 
 //console.log(createClients());
 
+//creacion de clases
+
+const accountList = new ListAccounts(clients,accounts);
+
+accountList.getListRichersSantander()
+accountList.sortClientsBankBalance();
+//console.log(accountList.getListRichersSantander()[0])
 
 const listClientsIds = () => clients.map(client => client.id);
 
@@ -243,12 +314,8 @@ const listAccountByClient = () => clients.map(client => {
     return accountsByClient;
 })
 
-const cuentasFiltradas = accounts.filter((account) => account.clientId ==6);
-
-
-
-
-console.log(listAccountByClient());
+const cuentasFiltradas = accounts.filter((account) => account.clientId == 6);
+//console.log(listAccountByClient());
 
 
 
