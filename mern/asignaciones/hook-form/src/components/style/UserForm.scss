@@ -1,0 +1,35 @@
+
+.form-container {
+
+  .card {
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      width: 400px;
+      height: 700px;
+      padding: 2%;
+      h1 {
+          text-align: center;
+      }
+      form {
+          display: flex;
+          flex-direction: column;
+          input {
+              height: 46px;
+              border-radius: 5px;
+              outline: none;
+              border: 1px solid #C8C8C8;
+              margin-bottom: 9px;
+          }
+
+          button {
+              height: 46px;
+              border-radius: 5px;
+              outline: none;
+          }
+
+      }
+      .error-message {
+          color: red;
+          font-size: 14px;
+      }
+  }
+}
