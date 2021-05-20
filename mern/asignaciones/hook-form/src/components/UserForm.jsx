@@ -22,23 +22,30 @@ const UserForm = (props) => {
         if (e.target.name === 'email') {
             const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             emailRegex.test(e.target.value) ? setError('') : setError('*Favor ingresar un correo en formato xxxx@xxxx.xxxx');
+        }else if (e.target.name==='firstname') {
+            (e.target.value.length >0 && e.target.value.length <3) ? setError('* El primer nombre debe tener al menos 2 caracteres') : setError('')
         }
+        else if (e.target.name==='lastname') {
+            (e.target.value.length >0 && e.target.value.length <3) ? setError('* El apellido debe tener al menos 2 caracteres') : setError('')
+        }
+        else if (e.target.name==='password') {
+            (e.target.value.length >0 && e.target.value.length <9) ? setError('* El password debe tener al menos 8 caracteres') : setError('')
+        } 
+        else if (e.target.name==='confirmPassword') {
+            password === e.target.value ? setError('') : setError('* Los passwords no coinciden')
+        }
+        
+        
         setUser({ ...user, [e.target.name]: e.target.value })
 
     }
 
 
     const createUser = (e) => {
-        e.preventDefault();
-
-        if (password===confirmPassword){
-            const newUser = { firstname, lastname,email, password, confirmPassword }
-            alert("Welcome", newUser.firstname)
-            clearForm();
-        }
-        else{
-            alert("Passwords no coinciden")
-        }
+        e.preventDefault();       
+        const newUser = { firstname, lastname,email, password, confirmPassword }
+        alert("Welcome", newUser.firstname)
+        clearForm();
     };
 
     return (
