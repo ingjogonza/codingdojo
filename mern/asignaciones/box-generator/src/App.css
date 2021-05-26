@@ -1,0 +1,8 @@
+*{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.App {
+  display: flex;
+  flex-wrap:wrap;
+}
+

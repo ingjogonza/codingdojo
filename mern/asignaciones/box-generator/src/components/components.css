@@ -1,0 +1,33 @@
+.cuadro{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+form input{
+    border-radius: 5px;
+    border-color: silver;
+    color: silver;
+    margin: 10px;
+    width: 190px;
+    height: 20px;
+    padding: 10px;
+    font-size: medium;
+}
+
+button{
+    width: 80px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}
