@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Products = ({ productsList, setProductsList }) => {
     const [product, setproduct] = useState({
@@ -85,7 +86,7 @@ const Products = ({ productsList, setProductsList }) => {
                     </div>
                 </div>
                     <div className="col-md-7">
-                        <table className="table table-striped">
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th scope="col">Title</th>
@@ -96,11 +97,17 @@ const Products = ({ productsList, setProductsList }) => {
                             <tbody>
                                 {
                                     productsList.length > 0 && productsList.map((item) => (
-                                        <tr key={item._id}>
-                                            <th scope="row">{item.title}</th>
-                                            <td>{item.price}</td>
-                                            <td>{item.description}</td>
-                                        </tr>
+                                        
+                                             <tr key={item._id}>
+                                                 <Link to={`/product/${item._id}`}>
+                                                    <th scope="row">{item.title}</th>
+                                                 </Link>
+                                                
+                                                <td>{item.price}</td>
+                                                <td>{item.description}</td>
+                                            </tr>
+                                        
+                                       
 
                                     ))
                                 }
