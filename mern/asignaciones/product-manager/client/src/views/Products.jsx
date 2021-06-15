@@ -1,128 +1,88 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-
-const Products = ({ productsList, setProductsList }) => {
-    const [product, setproduct] = useState({
-        title: '',
-        price: '',
-        description: ''
-    })
-
-    const getAllProducts = async () => {
-        try {
-            const res = await axios.get('http://localhost:8000/api/products')
-            setProductsList(res.data.products);
-            console.log(productsList);
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import useProducts from '../hooks/useProducts';
 
 
-        }
-        catch (error) {
-            return error;
-        }
-    }
+const Products = () => {
 
-    const handleChangeInput = (e)=>{
-        setproduct({...product,[e.target.name]: e.target.value})
-    }
+    let history = useHistory();
     
-    const createProduct = async (e) => {
-        e.preventDefault();
-        await axios.post('http://localhost:8000/api/products/new',{
-            title: product.title,
-            price: product.price,
-            description: product.description
-        })
-        setproduct({
-            title: '',
-            price: '',
-            description: ''
-        })
-        
-        getAllProducts();
-        
-    };
+   const [productsList, setProductList] = useState([])
+  
+  // console.log('lista de productos',productsList);
+   const { request } = useProducts({
+    method: 'get',
+     url: 'http://localhost:8000/api/products/'
+});
 
+const deleteProduct = async(id)=>{
+    
+    await axios.delete("http://localhost:8000/api/products/delete/"+id)
+    history.go(0);
+    
+}
+  
     useEffect(() => {
-        getAllProducts();
-    }, [])
+       
+
+        if (request){
+            setProductList(request.products);
+        }
+        else{
+            setProductList([])
+        }
+        
+    }, [request])
 
 
     return (
         <div className="container">
-            <div className="row mt-1">
-                <div className="col-md-5">
-                    <div className="card card-body">
-                        <h3 className="text-center">Create New Product</h3>
-                        <form onSubmit={(e)=>createProduct(e)}>
-                            <div className="row mb-3">
-                                <label htmlFor="title" className="col-sm-3 col-form-label">Title</label>
-                                <div className="col-sm-9">
-                                    <input type="text" className="form-control" name="title" id="title" value={product.title} onChange={(e) => handleChangeInput(e)}/>
-                                </div>
-                            </div>
-                            <div className="row mb-3">
-                                <label htmlFor="price" className="col-sm-3 col-form-label">Price</label>
-                                <div className="col-sm-9">
-                                    <input type="text" className="form-control" name="price" id="price" value={product.price}  onChange={(e) => handleChangeInput(e)}/>
-                                </div>
-                            </div>
-                            <div className="row mb-3">
-                                <label htmlFor="description" className="col-sm-3 col-form-label">Description</label>
-                                <div className="col-sm-9">
-                                    <input type="text" className="form-control" name="description" id="description" value={product.description} onChange={(e) => handleChangeInput(e)}/>
-                                </div>
-                            </div>
-                            <div className="row mb-3">
-                               
-                                <div className="col text-center">
-                                    <button type="submit" className="btn btn-primary btn-lg">Save</button>
-                                </div>
-                            </div>
-                           
+            <h1>Listado de Productos</h1>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Prize</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                productsList.length > 0 && productsList.map((item) => (
 
-                        </form>
-
-                    </div>
-                </div>
-                    <div className="col-md-7">
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Prize</th>
-                                    <th scope="col">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    productsList.length > 0 && productsList.map((item) => (
-                                        
-                                             <tr key={item._id}>
-                                                 <Link to={`/product/${item._id}`}>
-                                                    <th scope="row">{item.title}</th>
-                                                 </Link>
-                                                
-                                                <td>{item.price}</td>
-                                                <td>{item.description}</td>
-                                            </tr>
-                                        
+                                    <tr key={item._id} value={item._id}>
                                        
+                                        <th scope="row">{item.title}</th>
+                                        <td>{item.price}</td>
+                                        <td>{item.description}</td>
+                                        <td>
+                                            <div className="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
+                                                <Link to={`/product/${item._id}`}>
+                                                    {/* <span className="badge bg-info">View</span> */}
+                                                    <button type="button" className="btn btn-sm btn-success">Details</button>
+                                                </Link>
+                                                <Link to={`/product/edit/${item._id}`}>
+                                                    {/* <span className="badge bg-info">View</span> */}
+                                                    <button type="button" className="btn btn-sm btn-warning">Update</button>
+                                                </Link>
+                                                <button type="button" className="btn btn-sm btn-danger" onClick={()=>deleteProduct(item._id)}>Delete</button>
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))
+                            }
 
-                                    ))
-                                }
 
-                            </tbody>
+                        </tbody>
 
 
-                        </table>
+                    </table>
 
-                    </div>
-
-
-                </div>
-
-            </div>
+                
+        </div>
 
     )
 }
