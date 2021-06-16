@@ -2,8 +2,8 @@ crear servidor y cliente mern
 
 mkdir nombreproyecto
 cd proyecto
-npm install express
-npm install mongoose
+npm install express mongoose cors bcrypt jsonwebtoken
+
 Mac: touch server.js
 Windows: copy nul server.js
 
@@ -24,7 +24,6 @@ npx create-react-app client
 
 cd ..
 npm install -g nodemon
-npm -i cors
 
 en package.json editar el script start
 "start": "nodemon server.js",
@@ -32,7 +31,7 @@ en package.json editar el script start
  nodemon server.js
  abrimos otra terminal y nos ubicamos en client
  
- npm i axios react-router-dom bootstrap bcrypt jsonwebtoken (puedes cambiar bootstrap por otra libreria o framework de css)
+ npm i axios react-router-dom bootstrap  (puedes cambiar bootstrap por otra libreria o framework de css)
  npm start
  
  #CONFIGURAR EL SERVER POR DENTRO
