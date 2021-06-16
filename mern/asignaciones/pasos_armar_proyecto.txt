@@ -32,7 +32,7 @@ en package.json editar el script start
  nodemon server.js
  abrimos otra terminal y nos ubicamos en client
  
- npm i axios react-router-dom bootstrap (puedes cambiar bootstrap por otra libreria o framework de css)
+ npm i axios react-router-dom bootstrap bcrypt jsonwebtoken (puedes cambiar bootstrap por otra libreria o framework de css)
  npm start
  
  #CONFIGURAR EL SERVER POR DENTRO
