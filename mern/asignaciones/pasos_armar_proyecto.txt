@@ -1,0 +1,139 @@
+crear servidor y cliente mern
+
+mkdir nombreproyecto
+cd proyecto
+npm install express
+npm install mongoose
+Mac: touch server.js
+Windows: copy nul server.js
+
+dentro de server.js
+
+const express = require('express');
+const app = express();
+app.listen(8000, () => {
+    console.log("Listening at Port 8000")
+});
+
+mkdir server
+cd server
+mkdir config controllers models routes
+
+cd ..
+npx create-react-app client
+
+cd ..
+npm install -g nodemon
+npm -i cors
+
+en package.json editar el script start
+"start": "nodemon server.js",
+ nos ubicamos en la carpeta raiz
+ nodemon server.js
+ abrimos otra terminal y nos ubicamos en client
+ 
+ npm i axios react-router-dom bootstrap (puedes cambiar bootstrap por otra libreria o framework de css)
+ npm start
+ 
+ #CONFIGURAR EL SERVER POR DENTRO
+ 
+ 
+ ir a carpeta server/config y crear archivo mongoose.config.js y colocar
+ const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/nombre_de_tu_bd', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log('We are connecting with database, so so cool!'))
+.catch(err => console.error('Ha fallado todo oh no!!!', err))
+
+ir a server/models crear xxx.model.js
+
+const mongoose = require('mongoose');
+
+const ProductSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: [true, 'No puede enviar un producto sin titulo']
+    },
+    price: {
+        type: Number,
+        required: [true, 'No se puede crear un producto sin precio']
+    },
+    description: {
+        type: String,
+        required: [true, 'No puede enviar un producto descripcion']
+    },    
+},
+{timestamps: true}
+);
+
+const Product = mongoose.model('Product', ProductSchema);
+
+module.exports = Product;
+
+ir a server/controllers crear archivo xxx.controller.js
+
+const Product = require('../models/xxx.model');
+
+module.exports.findAllProducts = (req, res) => {
+    Product.find()
+    .then(allProducts => res.json({products: allProducts}))
+    .catch(err => res.json({products: null}));
+}
+
+module.exports.createNewProduct = (req, res) => {
+
+    console.log('llegue aqui',req.body);
+    Product.create(req.body)
+    .then(newProduct => res.send({product: newProduct}))
+    .catch(err => res.send({errors: err}));
+}
+
+module.exports.getProductByID = (req, res) => {
+    Product.findById(req.params.id)
+    .then(singleProduct => res.json({productData: singleProduct}))
+    .catch(error => res.json({productData: null}));
+}
+
+module.exports.updateExistingProduct = (req, res) => {
+    Product.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+        .then(updateProduct => res.json({ product: updateProduct }))
+        .catch(err => res.json({ message: "Something went wrong", error: err }));
+};
+
+module.exports.deleteExistingProduct = (req, res) => {
+    Product.findByIdAndDelete({ _id: req.params.id })
+        .then(deleteProduct => res.json({ productDeleted: deleteProduct }))
+        .catch(err => res.json({ message: "Something went wrong", error: err }));
+};
+
+ir a server/routes y crear xxx.route.js
+
+const ProductController = require('../controllers/product.controller');
+
+module.exports = app => {
+    app.get('/api/products', ProductController.findAllProducts);
+    app.get('/api/products/:id', ProductController.getProductByID);
+    app.post('/api/products/new', ProductController.createNewProduct);
+    app.put("/api/products/update/:id", ProductController.updateExistingProduct);
+    app.delete("/api/products/delete/:id", ProductController.deleteExistingProduct);
+    
+
+}
+
+en server.js
+
+const express = require('express');
+const app = express();
+require('./server/config/mongoose.config');
+const route = require ('./server/routes/product.route');
+const cors = require('cors');
+app.use(cors());
+app.use(express.json(), express.urlencoded({extended: true}));
+
+
+route(app);
+app.listen(8000, () => {
+    console.log("Listening at Port 8000")
+});
