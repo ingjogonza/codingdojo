@@ -2,6 +2,7 @@ crear servidor y cliente mern
 
 mkdir nombreproyecto
 cd proyecto
+npm init -y
 npm install express mongoose cors bcrypt jsonwebtoken
 
 Mac: touch server.js
